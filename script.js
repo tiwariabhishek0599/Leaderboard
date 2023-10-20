@@ -10,12 +10,10 @@ document.querySelector("form").addEventListener("submit", (event)=>{
         let errorSound=document.querySelector(".errorsound");
         errorMessage.style.display = "block";
         errorSound.play();
-        
     }
     else{
         let scoreBoardContainer = document.querySelector(".scoreBoard-container");
         let addPlayer=document.querySelector(".addOrDeleteSound");
-        
         let scoreBoardElement = document.createElement("div");
         scoreBoardElement.classList.add("scoreboard");
         const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
