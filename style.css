@@ -8,7 +8,7 @@
     font-family: 'Tilt Neon', sans-serif;
 }
 body{
-    background-image: url(https://media.istockphoto.com/id/931050898/photo/post-apocalypse-destroyed-city-street.jpg?s=1024x1024&w=is&k=20&c=V7k6VttCxqU-thETdb1nnOnN1q3nv4AsTtTVDSqys3A=);
+    background-image: url(https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?auto=format&fit=crop&q=80&w=1548&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -18,7 +18,7 @@ main{
     justify-content: center;
     align-items: center;
     padding: 2.5rem;
-    color: rgb(108, 61, 0);
+    color: aquamarine;
 }
 h1{
     font-size: 3rem;
@@ -27,9 +27,14 @@ h1{
     letter-spacing: 4px;
     text-decoration: 4px solid underline;
     margin-bottom: 2rem;
-    box-shadow: 5px 10px 8px #888888;
+    color:aquamarine;
 }
 h1::first-letter{
+    font-weight: 700;
+    font-size: 4rem;
+}
+span::first-letter{
+    text-transform: capitalize;
     font-weight: 700;
     font-size: 4rem;
 }
@@ -39,19 +44,20 @@ form{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 14px;
+    gap: 1rem;
 }
 input{
-    padding: 4px;
-    padding-left: 1rem;
+    padding-left: 10px;
     font-size: 16px;
-    border: 1px solid rgb(136, 76, 2);
+    border: 1px solid aqua;
     outline: none;
+    height: 2.5rem;
     border-radius: .5rem;
-    background-image: linear-gradient(to right,rgb(229, 162, 75),burlywood,#fcd8a1);
+    color: aquamarine;
+    background-color: transparent;
 }
 form input::placeholder{
-    padding-left: 5px;
+    color: aqua;
 }
 .scoreboard .player-country{
     text-transform: capitalize;
@@ -59,20 +65,20 @@ form input::placeholder{
 form button {
     all: unset;
     width: 10rem;
-    height: 2.5rem;
-    background-image: linear-gradient(to right,rgb(229, 162, 75),burlywood,#fcd8a1);
+    height: 3rem;
     transition: all .5s ease;
     text-align: center;
     border-radius: .5rem;
-    border: 1px solid rgb(136, 76, 2);
+    border: 1px solid aqua;
 }
 form button:hover{
-    background-color: burlywood;
+    background-color: aquamarine;
+    color: black;
     cursor: pointer;
 }
 .errorMessage{
     margin-bottom: 1rem;
-    color: brown;
+    color: aqua;
     font-size: 14px;
     font-weight: bold;
     display: none;
@@ -81,16 +87,18 @@ form button:hover{
 .scoreBoard-container{
     width: 80%;
     max-width: 900px;
+    gap: 5rem;
 }
 .scoreboard{
-    background-image: linear-gradient(to right,rgb(229, 162, 75),burlywood,#fcd8a1);
+    height: 5.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     padding: 1rem;
-    margin-bottom: 12px;
+    margin-bottom: 1.2rem;
     border-radius: .5rem;
+    border: 2px solid aqua;
 }
 .main-time{
     font-size: 12px;
@@ -109,10 +117,13 @@ form button:hover{
     height: 30px;
     background: transparent;
     border-radius: .5rem;
-    border: 1px solid rgb(136, 76, 2);
+    color: aqua;
+    border: 1px dotted aqua;
     font-weight: 600;
 }
 .scoreboard-btn-container button:hover{
-    background-color: burlywood;
+    transition: .5s ease;
+    background-color: aquamarine;
+    color: black;
     cursor: pointer;
 }

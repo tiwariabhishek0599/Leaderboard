@@ -7,10 +7,15 @@ document.querySelector("form").addEventListener("submit", (e)=>{
     let errorMessage = document.querySelector(".errorMessage")
     errorMessage.style.display = "none"
     if(firstName==="" || lastName === "" || country==="" || score===""){
-        errorMessage.style.display = "block"
+        let errorSound=document.querySelector(".errorsound");
+        errorMessage.style.display = "block";
+        errorSound.play();
+        
     }
     else{
         let scoreBoardContainer = document.querySelector(".scoreBoard-container");
+        let addPlayer=document.querySelector(".addPlayer");
+        
         let scoreBoardElement = document.createElement("div");
         scoreBoardElement.classList.add("scoreboard");
         const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
@@ -45,21 +50,26 @@ document.querySelector("form").addEventListener("submit", (e)=>{
         </div>
         `;
         scoreBoardContainer.appendChild(scoreBoardElement);
-        activateButton()
+        activateButton();
         sortAndAppend();
+        addPlayer.play();
     }
 })
 function activate(e) {
     let btnTarget = e.target.innerText;
+    let addOrDeleteSound=document.querySelector(".addOrDeleteSound");
     let scores = e.target.parentElement.parentElement.children[2];
     if (btnTarget === "🗑️") {
         e.target.parentElement.parentElement.remove();
+        addOrDeleteSound.play(); 
     }
     else if(btnTarget==="+5"){
-        scores.innerText = parseInt(scores.innerText)+5    
+        scores.innerText = parseInt(scores.innerText)+5  
+        addOrDeleteSound.play();  
     }
     else if(btnTarget==="-5"){
-        scores.innerText = parseInt(scores.innerText)-5    
+        scores.innerText = parseInt(scores.innerText)-5 
+        addOrDeleteSound.play(); 
     }
     sortAndAppend();
 }
