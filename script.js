@@ -14,7 +14,7 @@ document.querySelector("form").addEventListener("submit", (e)=>{
     }
     else{
         let scoreBoardContainer = document.querySelector(".scoreBoard-container");
-        let addPlayer=document.querySelector(".addPlayer");
+        let addPlayer=document.querySelector(".addOrDeleteSound");
         
         let scoreBoardElement = document.createElement("div");
         scoreBoardElement.classList.add("scoreboard");
