@@ -57,10 +57,12 @@ form input::placeholder{
     text-transform: capitalize;
 }
 form button {
-    all: unset;
     width: 10rem;
     height: 3rem;
     transition: all .5s ease;
+    background-color: transparent;
+    color: aquamarine;
+    font-size: 16px;
     text-align: center;
     border-radius: .5rem;
     border: 1px solid aqua;
@@ -80,7 +82,7 @@ form button:hover{
 }
 .scoreBoard-container{
     width: 80%;
-    max-width: 900px;
+    max-width: 950px;
     gap: 5rem;
 }
 .scoreboard{

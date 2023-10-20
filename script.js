@@ -1,9 +1,9 @@
-document.querySelector("form").addEventListener("submit", (e)=>{
-    e.preventDefault();
-    let firstName = e.target.children[0].value;
-    let lastName = e.target.children[1].value;
-    let country = e.target.children[2].value;
-    let score = e.target.children[3].value;
+document.querySelector("form").addEventListener("submit", (event)=>{
+    event.preventDefault();
+    let firstName = event.target.children[0].value;
+    let lastName = event.target.children[1].value;
+    let country = event.target.children[2].value;
+    let score = event.target.children[3].value;
     let errorMessage = document.querySelector(".errorMessage")
     errorMessage.style.display = "none"
     if(firstName==="" || lastName === "" || country==="" || score===""){
