@@ -16,23 +16,22 @@ document.querySelector("form").addEventListener("submit", (event)=>{
         let addPlayer=document.querySelector(".addOrDeleteSound");
         let allScoreBoardElement = document.createElement("div");
         allScoreBoardElement.classList.add("scoreboard");
-        const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
+        let month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
         let d = new Date();
-        function addZero(i) {
+        function Zero(i) {
             if (i < 10) {
                 i = "0" + i
             }
             return i;
           }
-        let h = addZero(d.getHours());
-        let m = addZero(d.getMinutes());
-        let s = addZero(d.getSeconds());
+        let h = Zero(d.getHours());
+        let m = Zero(d.getMinutes());
+        let s = Zero(d.getSeconds());
         let time = h + ":" + m + ":" + s;
 
         let mon = month[d.getMonth()];
         let year = d.getFullYear();
-        let da = addZero(d.getDate())
-        let date = mon + " "+  da + ", " + year;
+        let date = mon + " " +year;
 
         allScoreBoardElement.innerHTML = `
         <div>
@@ -40,7 +39,7 @@ document.querySelector("form").addEventListener("submit", (event)=>{
         <p class="main-time">${date}, ${time}</p>
         </div>
         <p class="player-country">${country}</p>
-        <p class="player-score">${score}</p>
+        <p class="playerScore">${score}</p>
         <div class="scoreboard-btn-container">
             <button>🗑️</button>
             <button>+5</button>
@@ -53,12 +52,12 @@ document.querySelector("form").addEventListener("submit", (event)=>{
         addPlayer.play();
     }
 })
-function activate(e) {
-    let btnTarget = e.target.innerText;
+function Activate(activateButton) {
+    let btnTarget = activateButton.target.innerText;
     let addOrDeleteSound=document.querySelector(".addOrDeleteSound");
-    let scores = e.target.parentElement.parentElement.children[2];
+    let scores = activateButton.target.parentElement.parentElement.children[2];
     if (btnTarget === "🗑️") {
-        e.target.parentElement.parentElement.remove();
+        activateButton.target.parentElement.parentElement.remove();
         addOrDeleteSound.play(); 
     }
     else if(btnTarget==="+5"){
@@ -73,15 +72,15 @@ function activate(e) {
 }
 
 function activateButton() {
-    [...document.querySelectorAll(".scoreboard-btn-container")].map(el => {
-        el.addEventListener("click", activate);
+    [...document.querySelectorAll(".scoreboard-btn-container")].map(e => {
+        e.addEventListener("click", Activate);
     });
 }
 function sortAndAppend() {
     let allScoreBoardContainer = document.querySelector(".all-scoreBoard-container");
     let data = [...document.querySelectorAll(".scoreboard")];
     data.sort((a, b) => {
-        return parseInt(b.querySelector(".player-score").textContent) - parseInt(a.querySelector(".player-score").textContent);
+        return parseInt(b.querySelector(".playerScore").textContent) - parseInt(a.querySelector(".playerScore").textContent);
     });
     while (allScoreBoardContainer.firstChild) {
         allScoreBoardContainer.removeChild(allScoreBoardContainer.firstChild);
