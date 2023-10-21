@@ -24,6 +24,7 @@ main{
     letter-spacing: 5px;
     text-decoration: 3px solid underline;
     margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(208, 198, 198, 0.5);
     color:aquamarine; 
 }
 form{
@@ -62,13 +63,14 @@ form button {
     text-align: center;
     border-radius: .5rem;
     border: 1px solid aqua;
+    letter-spacing: 2px;
 }
 form button:hover{
     background-color: aquamarine;
     color: black;
     cursor: pointer;
 }
-.errorMessage{
+.error{
     margin-bottom: 1rem;
     color: aqua;
     font-size: 14px;
@@ -76,7 +78,7 @@ form button:hover{
     display: none;
     text-decoration: 1px solid underline;
 }
-.scoreBoard-container{
+.all-scoreBoard-container{
     width: 80%;
     max-width: 950px;
     gap: 5rem;
@@ -92,7 +94,7 @@ form button:hover{
     border-radius: .5rem;
     color: black;
     background: linear-gradient(to left,rgb(139, 184, 139),aqua,aquamarine);
-    box-shadow: 5px 5px rgba(139, 184, 139,.1);
+    box-shadow: 2px 2px 6px rgba(139, 184, 139,.5);
 }
 .playerName{
     font-weight: 700;
@@ -118,7 +120,7 @@ form button:hover{
     font-weight: 600;
 }
 .scoreboard-btn-container button:hover{
-    transition: .5s ease;
+    transition: .3s ease;
     transform: scale(1.2);
     background-color: aquamarine;
     color: black;

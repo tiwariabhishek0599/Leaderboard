@@ -4,18 +4,18 @@ document.querySelector("form").addEventListener("submit", (event)=>{
     let lastName = event.target.children[1].value;
     let country = event.target.children[2].value;
     let score = event.target.children[3].value;
-    let errorMessage = document.querySelector(".errorMessage")
-    errorMessage.style.display = "none"
+    let error = document.querySelector(".error");
+    error.style.display = "none";
     if(firstName==="" || lastName === "" || country==="" || score===""){
         let errorSound=document.querySelector(".errorsound");
-        errorMessage.style.display = "block";
+        error.style.display = "block";
         errorSound.play();
     }
     else{
-        let scoreBoardContainer = document.querySelector(".scoreBoard-container");
+        let allScoreBoardContainer = document.querySelector(".all-scoreBoard-container");
         let addPlayer=document.querySelector(".addOrDeleteSound");
-        let scoreBoardElement = document.createElement("div");
-        scoreBoardElement.classList.add("scoreboard");
+        let allScoreBoardElement = document.createElement("div");
+        allScoreBoardElement.classList.add("scoreboard");
         const month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sept","Oct","Nov","Dec"];
         let d = new Date();
         function addZero(i) {
@@ -34,7 +34,7 @@ document.querySelector("form").addEventListener("submit", (event)=>{
         let da = addZero(d.getDate())
         let date = mon + " "+  da + ", " + year;
 
-        scoreBoardElement.innerHTML = `
+        allScoreBoardElement.innerHTML = `
         <div>
         <p class = "playerName"> ${firstName} ${lastName}</p>
         <p class="main-time">${date}, ${time}</p>
@@ -47,7 +47,7 @@ document.querySelector("form").addEventListener("submit", (event)=>{
             <button>-5</button>
         </div>
         `;
-        scoreBoardContainer.appendChild(scoreBoardElement);
+        allScoreBoardContainer.appendChild(allScoreBoardElement);
         activateButton();
         sortAndAppend();
         addPlayer.play();
@@ -78,16 +78,16 @@ function activateButton() {
     });
 }
 function sortAndAppend() {
-    let scoreBoardContainer = document.querySelector(".scoreBoard-container");
+    let allScoreBoardContainer = document.querySelector(".all-scoreBoard-container");
     let data = [...document.querySelectorAll(".scoreboard")];
     data.sort((a, b) => {
         return parseInt(b.querySelector(".player-score").textContent) - parseInt(a.querySelector(".player-score").textContent);
     });
-    while (scoreBoardContainer.firstChild) {
-        scoreBoardContainer.removeChild(scoreBoardContainer.firstChild);
+    while (allScoreBoardContainer.firstChild) {
+        allScoreBoardContainer.removeChild(allScoreBoardContainer.firstChild);
     }
     data.forEach((element) => {
-        scoreBoardContainer.appendChild(element);
+        allScoreBoardContainer.appendChild(element);
     });
 }
 sortAndAppend();
